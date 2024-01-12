@@ -1,0 +1,55 @@
+<div class="column">
+    <div class="top-box">
+        <div>
+            <label for="exampleSelect">Select an Priority:</label>
+            <select id="exampleSelect" (change)="onOptionSelected($event)" [(ngModel)]="priorityLevel">
+                <option value="">All</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <a routerLink="/Add-Task/0">
+            <button class="button">Add Task</button>
+        </a>
+    </div>
+</div>
+<div class="kanban-board">
+    <div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event,'open')">
+        <h2>open</h2>
+        <div class="task" (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('open')"
+            (dragstart)="onDragStart(a)">
+            Task : {{a.id}}
+            <div class="task-text">
+                <div>Title : {{a.title}}</div>
+                <div>Due Date : {{a.due_date}}</div>
+                <div>Priority : {{a.priority}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event,'in progress')">
+        <h2>In Progress</h2>
+        <div class="task" (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('in progress')"
+            (dragstart)="onDragStart(a)">
+            Task : {{a.id}}
+            <div class="task-text">
+                <div>Title : {{a.title}}</div>
+                <div>Due Date : {{a.due_date}}</div>
+                <div>Priority : {{a.priority}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event,'completed')">
+        <h2>Done</h2>
+        <div class="task" (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('completed')"
+            (dragstart)="onDragStart(a)">
+            Task : {{a.id}}
+            <div class="task-text">
+                <div>Title : {{a.title}}</div>
+                <div>Due Date : {{a.due_date}}</div>
+                <div>Priority : {{a.priority}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-task-view *ngIf="modelOpen" [taskData]="modelView" (dataEvent)="receiveData($event)"></app-task-view>

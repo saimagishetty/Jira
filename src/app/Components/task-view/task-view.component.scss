@@ -1,0 +1,115 @@
+.custom-model-main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .custom-model-inner{
+        padding: 20px 30px;
+        position: fixed;
+        margin: auto;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    .bg-overlay{
+        position: fixed;
+        z-index: 99;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        opacity: 0.8;
+    }
+
+}
+
+.card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 9999;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 30px;
+    padding: 10px 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.edit {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.delete {
+    background-color: #FF3333;
+    color: #fff;
+}
+
+.close {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.button:hover {
+    background-color: #ddd;
+    color: #333;
+}
+.close-icon{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+}
+.errorMessage{
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 8px;
+    color: red;
+}
+
+@media only screen and (max-width: 600px) {
+    h2,p{
+        margin: 3px 0px;
+    }
+    .card-content {
+        padding: 10px;
+    }
+    .buttons {
+        display: flex;
+        gap: 30px;
+        padding: 10px 10px;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+}

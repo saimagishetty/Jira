@@ -1,0 +1,76 @@
+.top-box {
+  display: flex;
+  justify-content: space-between;
+  .top-box1{
+    display: flex;
+    gap: 5px;
+  }
+  label {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  select option {
+    background-color: #fff;
+    color: #000;
+  }
+
+  select:focus,
+  select:hover {
+    border-color: #333;
+  }
+}
+
+.kanban-board {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+
+.column h2 {
+  text-align: center;
+}
+
+.task {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-text {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  h2 {
+    font-size: 16px;
+  }
+
+  .task {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .task-text {
+    font-size: 12px;
+  }
+
+  .kanban-board {
+    padding: 5px;
+  }
+
+}
